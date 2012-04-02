@@ -1,0 +1,20 @@
+<package>
+  <description brief="Frozen snapshot of willow's app manager">
+
+    Since willow's app manager is moving ever so fast, and we often make
+    a few tweaks on top, we've frozen it here.
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/willow_app_manager</url>
+  <depend package="rospy"/>
+  <depend package="rocon_master_sync"/>
+  <depend package="roslaunch"/>
+  <depend package="rosgraph"/>
+  <depend package="rosunit"/>
+
+</package>
+
+

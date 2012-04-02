@@ -1,0 +1,9 @@
+<stack>
+  <description brief="app framework for rocon on linux">Apps, managers and utilities for rocon on linux.</description>
+  <author>Maintained by Daniel Stonier</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rocon_linux_app_platform</url>
+  <depend stack="ros" />
+
+</stack>

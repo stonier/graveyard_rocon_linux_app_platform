@@ -1,0 +1,12 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+
+@section Overview
+
+Copy the scripts here to the ubuntu app repo server and put them somewhere in the path.
+
+ - scans the .deb repo and creates the manifests.
+ - scans the app_store and creates the applications.yaml database.
+*/

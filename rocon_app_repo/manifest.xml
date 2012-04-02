@@ -1,0 +1,14 @@
+<package>
+  <description brief="Tools for managing the rocon app repo.">
+
+     These help update the ubuntu app repo.
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rocon_app_repo</url>
+
+</package>
+
+

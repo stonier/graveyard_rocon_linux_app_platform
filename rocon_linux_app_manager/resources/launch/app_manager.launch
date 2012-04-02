@@ -1,0 +1,11 @@
+<!--
+  Application Manager
+  
+  Default parameters can/should be overridden where desired.
+ -->
+<launch>
+  <group ns="app_manager">
+    <node pkg="zeroconf_avahi" type="zeroconf" name="zeroconf" output="screen"/>
+    <node pkg="rocon_linux_app_manager" type="app_manager.py" name="app_manager" output="screen"/>
+  </group>
+</launch>

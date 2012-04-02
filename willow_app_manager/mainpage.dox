@@ -1,0 +1,21 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+@section Freeze
+
+@subsection guide Guide Demo
+
+Repo Information:
+
+ - Repo: https://code.ros.org/svn/ros/stacks/multimaster_experimental/trunk/app_manager
+ - Last Changed Revision: 14809
+ - Last Changed Date: Aug 25, 2011
+
+Modifications: 
+
+ - Added alot of rosconsole messages.
+ - sudo in app store flagged to allow unauthenticated packages.
+
+
+*/

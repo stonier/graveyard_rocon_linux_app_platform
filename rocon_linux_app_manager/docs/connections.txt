@@ -1,0 +1,13 @@
+
+Clients can be:
+
+1) invited
+2) make connections (or request an invitation)
+
+Is making a connection, anything other than a request to be invited?
+
+Aha, there is a difference. By default, the door to the concert master 
+should be closed. Not everyone should be able to freely connect to it.
+
+Fact: the door is open. If we zeroconf'ing that door, any dog can join.
+
