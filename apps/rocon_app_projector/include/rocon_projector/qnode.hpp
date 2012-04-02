@@ -54,7 +54,7 @@ public:
     Fatal
 	 };
 
-signals:
+Q_SIGNALS:
   void rosShutdown();
   void changeBackgroundTrigger(int trigger);
 

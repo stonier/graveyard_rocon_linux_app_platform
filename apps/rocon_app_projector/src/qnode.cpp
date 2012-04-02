@@ -81,7 +81,7 @@ void QNode::run()
     loop_rate.sleep();
   }
   std::cout << "Ros shutdown, proceeding to close the gui." << std::endl;
-  emit rosShutdown(); // used to signal the gui for a shutdown (useful to roslaunch)
+  Q_EMIT rosShutdown(); // used to signal the gui for a shutdown (useful to roslaunch)
 }
 
 
@@ -89,12 +89,12 @@ void QNode::subscriberCallback(const std_msgs::Int8::ConstPtr& input)
 {
   if ( input->data == 1 )
   {
-    emit changeBackgroundTrigger(input->data);
+    Q_EMIT changeBackgroundTrigger(input->data);
     ROS_INFO_STREAM("Subscriber: background change to next background triggered.");
   }
   else if ( input->data == -1 )
   {
-    emit changeBackgroundTrigger(input->data);
+    Q_EMIT changeBackgroundTrigger(input->data);
     ROS_INFO_STREAM("Subscriber: background change to last background triggered.");
   }
   else
