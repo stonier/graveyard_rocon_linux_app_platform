@@ -75,8 +75,8 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
   /*
    * Let's add some pictures
    */
+  picture_paths_.push_back(":/images/rocon-logo-grey-window.png"); // ui starts with this as default
   picture_paths_.push_back(":/images/dk04.jpg");
-  picture_paths_.push_back(":/images/rocon-logo-grey-window.png");
   picture_paths_.push_back(":/images/dk05.jpg");
   picture_paths_.push_back(":/images/dk06.jpg");
   picture_paths_.push_back(":/images/dk07.jpg");
