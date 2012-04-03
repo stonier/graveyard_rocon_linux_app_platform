@@ -195,6 +195,9 @@ class Exchange():
             deb = app['debian']
             self._debs[app['app']] = deb
             appc.latest_version = self.get_available_version(deb)
+	    if appc.latest_version.count("n/a") == 1:
+                print "[INFO] App Store : %s listed in app store but n/a in repo."%appc.name
+                continue
             appc.hidden = False
             print "[INFO] App Store : %s"%appc.name
             print "[INFO] App Store :   %s"%appc.display_name
