@@ -85,10 +85,10 @@ install(TARGETS rocon_projector DESTINATION ${PROJECT_NAME}/bin)
 # Version
 ###############################################################################
 
-set(PROJECT_VERSION "0.10.3")
+set(PROJECT_VERSION "0.10.4")
 set(PROJECT_VERSION_MAJOR "0")
 set(PROJECT_VERSION_MINOR "10")
-set(PROJECT_VERSION_PATCH "3")
+set(PROJECT_VERSION_PATCH "4")
 
 ###############################################################################
 # Rocon
