@@ -11,6 +11,7 @@ import uuid
 
 import roslib; roslib.load_manifest('rocon_linux_app_manager')
 import rospy
+import rospkg
 import willow_app_manager
 import concert_comms
 from concert_comms import msg
@@ -60,7 +61,7 @@ class AppManagement():
         self.platform_info.unique_name = ""
         
         # Paths
-        self.app_manager_home = os.path.join(roslib.rosenv.get_ros_home(),"app_manager")
+        self.app_manager_home = os.path.join(rospkg.get_ros_home(),"app_manager")
         #self.app_list_directory = app_manager.get_default_applist_directory() # /etc/robot/apps
         self.app_list_directory = rospy.get_param("~app_list_dir", os.path.join(self.app_manager_home,"app_list"))
         if not os.path.exists(self.app_manager_home):
