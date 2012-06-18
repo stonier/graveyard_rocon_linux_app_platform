@@ -167,7 +167,7 @@ class Exchange():
     
     def update(self):
         #Call server
-        print "[INFO] App Store : calling the app store server for details."
+        print "[INFO] App Store : calling the app store server for details [%s][%s]"%(self._exchange_local,self._url)
         val = (subprocess.Popen(["wget", "-O", self._exchange_local, self._url + "/applications.yaml"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0] or '').strip()
         if (val != "" or not os.path.exists(self._exchange_local)):
             print sys.stderr >> val

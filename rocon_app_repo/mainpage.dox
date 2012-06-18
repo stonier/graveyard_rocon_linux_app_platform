@@ -9,4 +9,6 @@ Copy the scripts here to the ubuntu app repo server and put them somewhere in th
 
  - scans the .deb repo and creates the manifests.
  - scans the app_store and creates the applications.yaml database.
+
+Minor problem is that there is no checking of applications in the app store by release.
 */

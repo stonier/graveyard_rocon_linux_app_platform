@@ -4,7 +4,7 @@ import os
 import yaml
 
 if __name__ == "__main__":
-    app_store_path="/opt/servers/apache/www/rocon/app_store"
+    app_store_path="//mnt/froody/shared/repos/rocon/app_store"
     app_store_yaml_path=os.path.join(app_store_path,"applications.yaml")
     if ( os.path.exists(app_store_yaml_path) ):
         os.remove(os.path.join(app_store_path,"applications.yaml"))

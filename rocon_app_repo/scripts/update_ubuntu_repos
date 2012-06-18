@@ -1,11 +1,15 @@
 #!/bin/bash
 
-DIR=/opt/servers/apache/www/rocon/apps/dists
+DIR=/mnt/froody/shared/repos/rocon/apps/dists
 
-cd ${DIR}/lucid/i386
+#cd ${DIR}/lucid/i386
+#dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+#cd ${DIR}/lucid/amd64
+#dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+#cd ${DIR}/oneiric/i386
+#dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
+cd ${DIR}/precise/i386
 dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
-cd ${DIR}/lucid/amd64
-dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
-cd ${DIR}/oneiric/i386
+cd ${DIR}/precise/amd64
 dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz
 
