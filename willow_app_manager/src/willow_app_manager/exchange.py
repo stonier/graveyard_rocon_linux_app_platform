@@ -44,6 +44,7 @@ import os
 import sys
 import yaml
 from .msg import ExchangeApp, Icon
+from urlparse import urlparse
 
 class Exchange():
     def __init__(self, url, directory, on_error = lambda(x): None):
@@ -166,6 +167,10 @@ class Exchange():
         return False
     
     def update(self):
+        # Check if it's not a file address (no http url was set)
+        result = urlparse(self._url)
+        if result.scheme != "http":
+            return
         #Call server
         print "[INFO] App Store : calling the app store server for details [%s][%s]"%(self._exchange_local,self._url)
         val = (subprocess.Popen(["wget", "-O", self._exchange_local, self._url + "/applications.yaml"], stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0] or '').strip()
