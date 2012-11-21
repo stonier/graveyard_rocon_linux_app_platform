@@ -8,8 +8,8 @@
   <license>BSD</license>
   <review status="experimental" notes=""/>
   <url>http://ros.org/wiki/appmanager_linux</url>
-  <depend package="concert_comms"/>
-  <depend package="zeroconf_comms"/>
+  <depend package="concert_msgs"/>
+  <depend package="zeroconf_msgs"/>
   <depend package="zeroconf_avahi"/>
   <depend package="rospy"/>
   <!-- <depend package="app_manager"/> -->

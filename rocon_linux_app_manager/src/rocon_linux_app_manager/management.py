@@ -13,9 +13,9 @@ import roslib; roslib.load_manifest('rocon_linux_app_manager')
 import rospy
 import rospkg
 import willow_app_manager
-import concert_comms
-from concert_comms import msg
-#from concert_comms.msg import * 
+import concert_msgs
+from concert_msgs import msg
+#from concert_msgs.msg import * 
 
 ##############################################################################
 # Classes
@@ -51,9 +51,9 @@ class AppManagement():
         self.app_manager = None
         self.invitations = []
 
-        self.platform_info = concert_comms.msg.PlatformInfo()
-        self.platform_info.platform = concert_comms.msg.PlatformInfo.PLATFORM_LINUX
-        self.platform_info.system = concert_comms.msg.PlatformInfo.SYSTEM_ROS
+        self.platform_info = concert_msgs.msg.PlatformInfo()
+        self.platform_info.platform = concert_msgs.msg.PlatformInfo.PLATFORM_LINUX
+        self.platform_info.system = concert_msgs.msg.PlatformInfo.SYSTEM_ROS
         self.platform_info.robot = robot
         key = uuid.uuid4() # random 16 byte string, alternatively uuid.getnode() returns a hash based on the mac address, uuid.uid1() based on localhost and time
         self.platform_info.key = key.hex # convert the uuid key into a hex string
@@ -130,7 +130,7 @@ class AppManagement():
         # We latch this one, so whenever anyone connects to it, they will immediately get the platform information
         # Note that we only publish this one once PlatformInfo is fully fleshed out after connection to the concert
         # Note also that the concert uses this one to watchdog!
-        self._platform_info_pub = rospy.Publisher(self.app_manager.scoped_name('platform_info'), concert_comms.msg.PlatformInfo, latch=True)
+        self._platform_info_pub = rospy.Publisher(self.app_manager.scoped_name('platform_info'), concert_msgs.msg.PlatformInfo, latch=True)
         self.app_manager._api_sync.local_manager.subscribe(self._platform_info_pub.resolved_name)
 
         # App store pubs and services on top

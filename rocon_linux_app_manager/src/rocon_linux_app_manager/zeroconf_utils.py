@@ -10,15 +10,15 @@ Created on 10/08/2011
 import roslib; roslib.load_manifest('rocon_linux_app_manager')
 import rospy
 
-from zeroconf_comms.msg import *
-from zeroconf_comms.srv import *
+from zeroconf_msgs.msg import *
+from zeroconf_msgs.srv import *
 
 ##############################################################################
 # Functions
 ##############################################################################
 
 def ipv4_protocol():
-    return zeroconf_comms.msg.Protocols.IPV4
+    return zeroconf_msgs.msg.Protocols.IPV4
 
 def listen_for_concerts():
     '''
@@ -27,7 +27,7 @@ def listen_for_concerts():
     try:
         rospy.wait_for_service('add_listener', 30.0)
         add_listener=rospy.ServiceProxy('add_listener', AddListener)
-        request = zeroconf_comms.srv.AddListenerRequest()
+        request = zeroconf_msgs.srv.AddListenerRequest()
         request.service_type = '_concert-master._tcp'
         response = add_listener(request)
         if response.result == False:
@@ -45,8 +45,8 @@ def discover_concerts():
     rospy.wait_for_service('list_discovered_services')
         
     try:
-        discover_concerts = rospy.ServiceProxy('list_discovered_services', zeroconf_comms.srv.ListDiscoveredServices)
-        request = zeroconf_comms.srv.ListDiscoveredServicesRequest()
+        discover_concerts = rospy.ServiceProxy('list_discovered_services', zeroconf_msgs.srv.ListDiscoveredServices)
+        request = zeroconf_msgs.srv.ListDiscoveredServicesRequest()
         request.service_type = "_concert-master._tcp"
         response = discover_concerts(request)
         rospy.logdebug("AppManager : found concerts")
@@ -64,14 +64,14 @@ def advertise_app_manager(name, domain, port):
         rospy.logerr("App Manager: timeout while trying to advertise the app manager on zeroconf")
         return False
     
-    request = zeroconf_comms.srv.AddServiceRequest()
+    request = zeroconf_msgs.srv.AddServiceRequest()
     request.service.name = name
     request.service.domain = domain
     request.service.type = "_app-manager._tcp"
     request.service.port = port
     
     try:
-        advertise_app_manager = rospy.ServiceProxy('add_service', zeroconf_comms.srv.AddService)
+        advertise_app_manager = rospy.ServiceProxy('add_service', zeroconf_msgs.srv.AddService)
         response = advertise_app_manager(request)
         if response.result:
             rospy.loginfo("App Manager: advertising service [%s][%s][%s]"%(request.service.name, request.service.domain, request.service.port))
