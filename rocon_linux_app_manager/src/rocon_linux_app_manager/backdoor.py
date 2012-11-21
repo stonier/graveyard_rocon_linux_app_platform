@@ -16,7 +16,7 @@ from SimpleXMLRPCServer import SimpleXMLRPCServer
 import roslib; roslib.load_manifest('rocon_linux_app_manager')
 import rospy
 
-from zeroconf_comms.msg import Protocols
+from zeroconf_msgs.msg import Protocols
 
 # Local Imports
 from .zeroconf_utils import ipv4_protocol
